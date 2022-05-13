@@ -1,0 +1,12 @@
+GeneratorModel for yakindu::c {
+
+	statechart blinky {
+
+		feature Outlet {
+			targetProject = "prueba-yakindu"
+			targetFolder = "Core/Src"
+			libraryTargetFolder = "Core/Inc"
+			apiTargetFolder = "Core/Inc"
+		}
+	}
+}

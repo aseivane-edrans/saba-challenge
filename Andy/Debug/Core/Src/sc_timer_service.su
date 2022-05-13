@@ -1,0 +1,5 @@
+../Core/Src/sc_timer_service.c:14:13:sc_timer_fired	16	static
+../Core/Src/sc_timer_service.c:22:6:sc_timer_start	32	static
+../Core/Src/sc_timer_service.c:50:6:sc_timer_cancel	24	static
+../Core/Src/sc_timer_service.c:67:6:sc_timer_service_init	32	static
+../Core/Src/sc_timer_service.c:83:6:sc_timer_service_proceed	32	static
