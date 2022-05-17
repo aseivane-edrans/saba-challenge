@@ -1,0 +1,30 @@
+USING GIT'S LOGS
+
+git log
+
+git log --graph
+
+git log --stat
+
+git log --pretty=format:
+
+man git-log
+
+-------------------------
+
+git log --graph
+
+git log --since="4 days ago"
+
+git log -S build
+
+git log --stat
+
+git log --shortstat
+
+git log --pretty=format:"%h - %an - %ar - %s"
+
+
+QUIZ
+
+
