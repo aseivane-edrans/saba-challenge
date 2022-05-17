@@ -1,0 +1,248 @@
+USING TAGS
+
+
+git tag -a <tag name> -m <message>
+
+git tag
+
+git tag <tag name> -m <message>
+
+git tag -d <tag name>
+
+man git-tag
+
+----------------------------
+
+git tag -a v0.1 -m "First for the project"
+
+git tag
+
+git show v0.1
+
+git tag -d v0.1
+
+git tag
+
+
+
+USING BRANCHES
+
+
+git branch <branch name>
+
+git checkout <branch name>
+
+HEAD
+
+man git-branch
+
+man git-checkout
+
+------------------------------
+
+git status
+
+git branch development
+
+git status
+
+git log --oneline --decorate
+
+git checkout development
+
+git status
+
+echo "New Features:" >> CHANGELOG.md
+
+git commit -a -m "adding features section to changelog"
+
+vim CHANGELOG.md
+
+#####
+
+:wq
+
+git commit -a -m "fixed up formatting for new features section"
+
+git checkout master
+
+cat CHANGELOG.md
+
+git checkout development
+
+cat CHANGELOG.md
+
+
+
+MERGING BRANCHES
+
+
+git merge
+
+git branch -d <branch>
+
+man git-merge
+
+------------------------
+
+
+cat .git/HEAD
+
+cat .git/refs/heads/master
+
+git log --oneline
+
+git status 
+
+git merge development
+
+git branch trial1
+
+git branch trial2
+
+git checkout trial1
+
+echo "stuff" >> info.txt
+
+git add info.txt
+
+git commit -m "new infor file - stuff"
+
+git checkout trial2
+
+echo "things" >> info.txt
+
+git add info.txt
+
+git commit -m "new info file - things"
+
+git checkout trial1
+
+git merge trial2
+
+git status
+
+vim info.txt
+
+stuff things
+
+:wq
+
+git add info.txt
+
+git commit -m "added trial2's work, resolved merge conflict"
+
+git checkout master
+
+git merge trial1
+
+cat info.txt
+
+git branch -d trial1
+
+git branch -d trial2
+
+
+REBASING
+
+git rebase <branch>
+
+man git-rebase
+
+----------------------
+
+
+git checkout development
+
+vim README.md
+
+`g++ -o build/hi-there src/hi-there.cpp`
+
+:wq
+
+git status
+
+git commit -a -m "updated build instructions"
+
+git checkout master
+
+git rebase development
+
+cat README.md
+
+
+REVERTING A COMMIT
+
+git revert <commit>
+
+man git-revert
+
+------------------------
+
+
+echo amsdkhjhsfjkhsjkfnskskhakjhdjkashdkja >> README.md
+
+git commit -a -m "updated readme file - important info"
+
+git revert HEAD 
+
+Revert "updated readme file - important info - cat walked acroos the the keyboard"
+
+:wq
+
+cat README.md
+
+git log
+
+git log --oneline
+
+git revert HEAD~2
+
+:wq
+
+git log --oneline
+
+
+USING THE 'DIFF' COMMAND
+
+
+git diff
+
+echo "show me git diff" >> CHANGELOG.md
+
+git diff
+
+git diff HEAD^ HEAD
+
+git log --oneline
+
+git diff 9265dc3 df6ac96
+
+git diff --summary 9265fc3 df6ac96
+
+
+
+HOW GARBAGE COLLECTION WORKS
+
+
+git gc
+
+git gc --prune
+
+man git-gc
+
+-------------------------
+
+git gc --prune
+
+git gc --auto
+
+git config gc.pruneexpire "30 days"
+
+
+
+QUIZ
+
+
+
+

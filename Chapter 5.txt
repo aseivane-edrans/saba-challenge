@@ -1,0 +1,61 @@
+TRACKING REMOTE REPOSITORIES
+
+git remote -v
+
+git fetch
+
+man git-fetch
+
+man git-remote
+
+----------------------
+
+ssh-keygen
+
+cat ~/.ssh/id_rsa.pub
+
+(copy and paste the key in your profile in GitHub) -SSH and GPG keys-
+
+git  clone git@github.com:linuxacademy/content-source-control-git.git
+
+yes
+
+ls
+
+cd content-source-cotrol-git/
+
+git remote -v
+
+git remote show origin
+
+git fetch origin
+
+git pull
+
+
+PUSHING TO REMOTE REPOSITORIES
+
+git push -u <remote> <local branch>
+
+man git-push
+
+------------------------------
+
+git branch readme-updates 
+
+git checkout readme-updates
+
+echo "Be sure to have your SSH key set up and that your public key (located in 
+~/ssh/id_rsa.pub) is added to your GitHub account." >> README.md
+
+git commit -a -m "updated README to include info on ssh key"
+
+git push -u origin readme-updates
+
+
+PULL REQUESTS
+
+-Create Pull Request-
+
+
+

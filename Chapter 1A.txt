@@ -1,0 +1,54 @@
+INSTALLING GIT ON A RED HAT BASED DISTRIBUTION
+
+
+yum install git
+
+git --version
+
+man git
+
+dnf install git
+
+
+INSTALLING GIT ON A DEBIAN BASED DISTRIBUTION
+
+apt-get install git
+
+git--version
+
+man git
+
+------------------------------
+
+gitinmersion.com/lab_05.html
+
+LAB 5 -Punto 2-
+
+Este es un cambio impresionante!
+
+---------------------------------------------------------
+
+gitinmersion.com/lab_08.html
+
+LAB 8 -Punto 2-
+
+Testeando el comando git commit sin utilizar la opción -m
+
+----------------------------------------------------------
+
+gitinmersion.com/lab_09.html
+
+LAB 9 -Punto 2-
+
+name = ARGV || World
+
+puts "Hello, #{name}!"
+
+      -Punto 4-
+
+#Default is "World"
+
+
+
+
+
