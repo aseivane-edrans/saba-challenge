@@ -7,10 +7,11 @@ terraform {
     }
   }
   required_version = ">= 0.13"
-/*  backend "s3" {
-    profile = "demo"
-    region  = "us-east-1"
-    key     = "terraform.tfstate"
-    bucket  = "terraform-onboarding-aseivane-tfstate"
-  }*/
+  backend "s3" {
+    bucket        = "terraform-onboarding-aseivane-tfstate"
+    key           = "terraform.tfstate"
+    region        = "us-east-1"
+    encrypt       = true
+    kms_key_id    = "alias/aws/s3"
+  }
 }

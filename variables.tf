@@ -20,3 +20,14 @@ variable "tags" {
     project        = "SOT2022Q1-terraform-sabachallenge"
   }
 }
+
+variable "s3-kms" {
+  description = "S3 KMS keys and parameters"
+  type        = map(string)
+  default = {
+    bucket        = "terraform-onboarding-aseivane-tfstate"
+    key           = "terraform.tfstate"
+    region        = "us-east-1"
+    kms_key_id    = "alias/aws/s3"
+  }
+}
