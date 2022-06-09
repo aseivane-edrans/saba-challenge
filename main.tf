@@ -19,5 +19,4 @@ resource "aws_instance" "webserver" {
       host        = self.public_ip
     }
   }
-  tags = var.tags
 }
