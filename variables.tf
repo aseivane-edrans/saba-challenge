@@ -1,10 +1,11 @@
-variable "external_port" {
-  type    = number
-  default = 8080
-  validation {
-    condition     = can(regex("8080|80", var.external_port))
-    error_message = "Port values can only be 8080 or 80."
-  }
+variable "project" {
+  description = "Project varibales"
+  type        = map(string)
+  default = {
+    name    = "cloudOnboarding"
+    user    = "aseivane"
+    region  = "us-east-1"
+  }  
 }
 
 variable "tags" {
@@ -17,7 +18,8 @@ variable "tags" {
     tagVersion     = 1
     role           = "SOT"
     region         = "us-east-1"
-    project        = "SOT2022Q1-terraform-sabachallenge"
+    project        = "cloudOnboarding"
+    prefix         = "cloudOnboarding-aseivane"
   }
 }
 
@@ -29,5 +31,14 @@ variable "s3-kms" {
     key           = "terraform.tfstate"
     region        = "us-east-1"
     kms_key_id    = "alias/aws/s3"
+  }
+}
+
+variable "external_port" {
+  type    = number
+  default = 8080
+  validation {
+    condition     = can(regex("8080|80", var.external_port))
+    error_message = "Port values can only be 8080 or 80."
   }
 }

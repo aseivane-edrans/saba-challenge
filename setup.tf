@@ -1,6 +1,6 @@
 provider "aws" {
-  region = "us-east-1"
-  profile = "aseivane"
+  region = var.project.region
+  profile = var.project.user
   default_tags {
     tags = var.tags
   }

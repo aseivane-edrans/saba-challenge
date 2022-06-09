@@ -5,7 +5,7 @@ resource "aws_instance" "webserver" {
   key_name                    = aws_key_pair.webserver-key.key_name
   associate_public_ip_address = true
   vpc_security_group_ids      = [aws_security_group.sg.id]
-  subnet_id                   = aws_subnet.subnet.id
+  subnet_id                   = module.vpc.public_subnet_ids[0]
   provisioner "remote-exec" {
     inline = [
       "sudo yum -y install httpd && sudo systemctl start httpd",
@@ -18,5 +18,8 @@ resource "aws_instance" "webserver" {
       private_key = file("~/.ssh/id_rsa")
       host        = self.public_ip
     }
+  }
+  tags = {
+    Name = "${var.project.user}-webserver"
   }
 }

@@ -1,0 +1,16 @@
+options:
+  max-time: 30
+pipelines:
+  default:
+    - step:
+        name: Run Tests
+        image: edransdevopsteam/terraform-modules-ci-cd:0.9.0
+        script:
+          - /ci/ci_tests.sh
+  branches:
+    master:
+      - step:
+          name: Update Tag Version
+          image: edransdevopsteam/terraform-modules-ci-cd:0.9.0
+          script:
+            - /ci/ci_update_tag.sh
