@@ -1,0 +1,94 @@
+WHAT IS GITLAB
+
+DOWNLOAD,INSTALL AND CONFIGURE FOR LOCAL USE
+
+su -
+
+yum -y install lynx mutt
+
+curl (paste the link from gitlab)
+
+yum -y install gitlab-ce
+
+openssl genrsa -out key.pem 2048
+
+openssl req -new -sha256 -key key.pem -out csr.csr
+
+openssl req -x509 -sha256 -days 365 -key key.pem -in csr.csr -out certficate.pem
+
+mkdir /etc/gitlab/ssl
+
+chmod 700 /etc/gitlab/ssl
+
+cp *.pem /etc/gitlab/ssl
+
+clear
+
+vim /etc/gitlab/gitlab.rb
+
+external_url 'https://kennyarmstrong3.mylabserver.com'
+
+/ssl_certificate (search in vim)
+
+(uncomment nginx lines)
+
+gitlab-ctl reconfigure
+
+
+ADDING USERS AND GROUPS TO GITLAB
+
+
+CREATING AND MANAGING PROJECTS
+
+(created project in GitLab web browser)
+
+git clone git@kennyarmstrong3.mylabserver.com:it-dept/practice.git
+
+ls
+
+cd practice/
+
+git config user.name "Kenny Armstrong"
+
+git config user.email "user@kennyarmstrong3.mylabserver.com"
+
+vim README.md
+
+(edit vim)
+
+:wq
+
+git add README.md
+
+git commit -m "added README file"
+
+git push -u origin master 
+
+(go back to project at web browser)
+
+
+PUSH CHANGES AND MERGE WITH GITLAB
+
+
+git checkout -b new-changelog
+
+echo "Changelog:" >> CHANGELOG.md
+
+git add CHANGELOG.md
+
+git commit -m "added CHANGELOG.md"
+
+git remote -v
+
+git push origin new-changelog
+
+(check project at GitLab browser)
+
+git checkout master
+
+git pull
+
+ls
+
+
+

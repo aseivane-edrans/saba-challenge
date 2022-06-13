@@ -1,0 +1,286 @@
+UNDERSTANDING THE GIT FILE SYSTEM
+
+CREATING A LOCAL REPOSITORY (EMPTY)
+
+git init hi-there
+
+ls -a hi-there/.git
+
+ls -a test/
+
+git init test/
+
+ls -a test/
+
+git init --bare big-project.git
+
+ls -a big-project.git/
+
+rm -rf big-project.git/
+
+
+BASIC CONFIGURATION OF GIT
+
+
+git config 
+
+git config --list
+
+man git-config
+--------------------------
+git config --global user.name "Kenny Armstrong"
+
+git config --global user.email "kenny@linuxacademy.com"
+
+git config --list
+
+git config --global core.editor "/usr/bin/vim"
+
+git config --list
+
+cat ~/.gitconfig
+
+cd fake-project/
+
+git config user.email "kenny@example.com"
+
+git config --list
+
+git config user.email
+
+cd
+
+git config user.email
+
+
+
+ADDING FILES TO A PROJECT
+
+ls
+
+git add README.md
+
+cat .git/index
+
+git status
+
+mkdir src
+
+git add src/
+
+git status
+
+vim hi-there.cpp
+
+mv hi-there.cpp src/
+
+git add src/hi-there.cpp
+
+git status
+
+touch src/.keep
+
+git add src/.keep
+
+git rm src/.keep
+
+git rm -f src/.keep
+
+ls -a src/
+
+
+
+THE STATUS OF YOUR PROJECT
+
+
+git status
+
+git status -s
+
+git status -v
+
+man git-status
+--------------------------
+touch LICENSE
+
+git status
+
+git status -s
+
+git add LICENSE
+
+git status
+
+echo "This is our license file." > LICENSE
+
+git status
+
+git status -s
+
+git add LICENSE
+
+git status -s
+
+git status
+
+git status -v
+
+
+
+COMMITTING TO GIT
+
+
+git commit
+
+git commit -m "Commit Message"
+
+git commit -a m "Message"
+
+man git-commit
+
+----------------------------------
+
+git commit
+
+Our First commit for the project.
+
+:wq
+
+cat .git/COMMIT_EDITMSG
+
+git log
+
+ls .git/objects/92/
+
+echo "Our changelog file" >> CHANGELOG.md
+
+git add CHANGELOG.md
+
+git status
+
+git commit -m "Adding the changelog file"
+
+git rm --cached CHANGELOG.md
+
+ls
+
+git status
+
+git status -s
+
+git commit
+
+changelog removed from project    (in vim)
+
+:wq
+
+git status
+
+git add CHANGELOG.md
+
+echo "Put notes here: " >> CHANGELOG.md
+
+git commit -a -m "bringing the changelog back"
+
+git status
+
+
+
+IGNORING CERTAIN FILE TYPES
+
+
+.git/info/exclude
+
+.gitignore
+
+git check-ignore <pattern>
+
+man gitignore
+
+-----------------------------
+
+mkdir build
+
+touch .gitignore
+
+git add .gitignore
+
+git status
+
+git commit -m "adding a gitignore file"
+
+echo "build/*" >> .gitignore
+
+git status
+
+git commit -a -m "updated our gitignore file to exclude build directory"
+
+g++ -o build/hi-there src/hi-there.cpp
+
+ls build/
+
+build/hi-there
+
+git status
+
+vim CHANGELOG.md
+
+First test build
+
+:wq
+
+ls
+
+git status
+
+echo *~ >> .gitignore
+
+git status
+
+git commit -a -m "updated changelog, and ignoring vim backup files in gitignore"
+
+git status
+
+clear
+
+git check-ignore *~
+
+
+QUIZ
+
+
+LAB-INSTALLING GIT AND CONFIGURING IT FOR LOCAL REPOSITORIES
+
+
+git config --global user.name "cloud_user"
+
+git config --global user.email "cloud_user@mylabserver.com"
+
+git config --global core.editor "/usr/bin/vi"
+
+git config --list
+
+
+LAB 2-CREATING LOCAL REPOSITORIES WITH GIT AND ADDING/CHECKING IN FILES
+
+
+git init web-api
+
+cd web-api
+
+echo "Web-API v1" >> README.md
+
+git add README.md
+
+git status
+
+git commit -m "added README.md to project"
+
+
+
+
+
+
+
+
+

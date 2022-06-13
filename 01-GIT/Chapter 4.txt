@@ -1,0 +1,88 @@
+CLONING LOCAL REPOSITORIES
+
+
+git clone <local repo> <new repo>
+
+man git-clone
+
+----------------------------------
+
+
+git clone hi-there hi-there-test
+
+cd hi-there-test/
+
+clear
+
+
+CLONING REMOTE REPOSITORIES OVER HTTPS
+
+
+git clone <remote URL>
+
+man git-clone
+
+----------------------------
+
+git clone (paste link URL)
+
+ls
+
+cd fs-photos/
+
+git log --graph
+
+clear
+
+git status
+
+
+
+FORKING
+
+
+QUIZ
+
+
+LAB-SECURING YOUR GITHUB ACCOUNT WITH SSH KEYS
+
+SOLUTION
+
+
+ssh-keygen
+
+cat .ssh/id_rsa.pub
+
+(add key in Git account settings)
+
+git clone git@github.com:linuxacademy/content-source-control-git.git
+
+ls
+
+
+
+LAB 2-CLONING A REMOTE GITHUB REPOSITORY
+
+
+SOLUTION
+
+
+
+sudo mkdir /mnt/baserepo
+
+sudo chmod 777 /mnt/baserepo
+
+cd /mnt/baserepo
+
+git clone https://github.com/linuxacademy/content-source-control-git.git .
+
+cd 
+
+mkdir experiment
+
+cd experiment/
+
+git clone --local /mnt/baserepo .
+
+ls
+
